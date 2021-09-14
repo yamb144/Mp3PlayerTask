@@ -5,14 +5,14 @@ const player = {
       title: 'Vortex',
       album: 'Wallflowers',
       artist: 'Jinjer',
-      duration: 242,
+      duration: 232,
     },
     {
       id: 2,
       title: 'Vinda',
       album: 'Godtfolk',
       artist: 'Songleikr',
-      duration: 160,
+      duration: 150,
     },
     {
       id: 7,
@@ -29,7 +29,7 @@ const player = {
       duration: 292,
     },
     {
-      id: 4,
+      id: 3,
       title: 'All is One',
       album: 'All is One',
       artist: 'Orphaned Land',
@@ -44,8 +44,8 @@ const player = {
     },
   ],
   playlists: [
-    { id: 1, name: 'Metal', songs: [1, 7, 4] },
-    { id: 5, name: 'Israeli', songs: [4, 5] },
+    { id: 1, name: 'Metal', songs: [1, 7, 3] },
+    { id: 5, name: 'Israeli', songs: [3, 5] },
   ],
   playSong(song) {
     console.log(/* your code here */)
@@ -56,41 +56,41 @@ function minutestosec (time){
   
 var mins = ~~((time % 3600) / 60);
 var secs = ~~time % 60;
-​
-  return mins +":" + secs
+if (secs<10)
+  return mins +":0" + secs
+  else  return mins +":" + secs
 
 }
 
 function playSong(id) {
   
   if(id==1){
-    console.log("Playing "+ player.songs[0].title +"from" + player.songs[0].album +
-    'by' + player.songs[0].artist +'|'+minutestosec(player.songs[0].duration))
+    console.log("Playing "+ player.songs[0].title +" from  " + player.songs[0].album +
+    ' by ' + player.songs[0].artist +' | '+minutestosec(player.songs[0].duration) +".")
   }
   if(id==2){
-    console.log("Playing "+ player.songs[1].title +"from" + player.songs[1].album +
-    'by' + player.songs[1].artist +'|'+minutestosec(player.songs[1].duration))
+    console.log("Playing "+ player.songs[1].title +" from " + player.songs[1].album +
+    ' by ' + player.songs[1].artist +' | '+minutestosec(player.songs[1].duration)+".")
   }
   if(id==7){
-    console.log("Playing "+ player.songs[2].title +"from" + player.songs[2].album +
-    'by' + player.songs[2].artist +'|'+minutestosec(player.songs[2].duration))
+    console.log("Playing "+ player.songs[2].title +" from " + player.songs[2].album +
+    ' by ' + player.songs[2].artist +' | '+minutestosec(player.songs[2].duration)+".")
   }
   if(id==3){
-    console.log("Playing "+ player.songs[4].title +"from" + player.songs[4].album +
-    'by' + player.songs[4].artist +'|'+minutestosec(player.songs[4].duration))
+    console.log("Playing "+ player.songs[3].title +" from " + player.songs[3].album +
+    ' by ' + player.songs[3].artist +' | '+minutestosec(player.songs[3].duration)+".")
   }
   if(id==4){
-    console.log("Playing "+ player.songs[5].title +"from" + player.songs[5].album +
-    'by' + player.songs[5].artist +'|'+minutestosec(player.songs[5].duration))
+    console.log("Playing "+ player.songs[4].title +" from " + player.songs[4].album +
+    ' by ' + player.songs[4].artist +' | '+minutestosec(player.songs[4].duration)+".")
   }
   if(id==5){
-    console.log("Playing "+ player.songs[6].title +"from" + player.songs[6].album +
-    'by' + player.songs[6].artist +'|'+minutestosec(player.songs[6].duration))
+    console.log("Playing "+ player.songs[5].title +" from " + player.songs[5].album +
+    ' by ' + player.songs[5].artist +' | '+minutestosec(player.songs[5].duration)+".")
   }
   // your code here - `playSong` - Gets a song ID. Uses `player.playSong` to play the song with the given ID.
-  //"Playing {song.title} from {song.album} by {song.artist} | {song.duration}."
+  //"Playing {song.title}  from  {song.album}  by  {song.artist} | {song.durati o n}."
 }
-console.log('fd');
 
 function removeSong(id) {
   // your code here
@@ -129,7 +129,7 @@ function searchByDuration(duration) {
 }
 
 
-playSong(1);
+playSong(5);
   
 module.exports = {
   player,
