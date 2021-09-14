@@ -29,7 +29,7 @@ const player = {
       duration: 292,
     },
     {
-      id: 3,
+      id: 4,
       title: 'All is One',
       album: 'All is One',
       artist: 'Orphaned Land',
@@ -48,14 +48,18 @@ const player = {
     { id: 5, name: 'Israeli', songs: [3, 5] },
   ],
   playSong(song) {
-    console.log(/* your code here */)
-  },
+    console.log(
+      `Playing ${song.title} from ${song.album} by ${
+        song.artist
+      } | ${minutestosec(song.duration)}.`}
+  
 
 }
-function minutestosec (time){
+function minutestosec (time) {
   
-var mins = ~~((time % 3600) / 60);
-var secs = ~~time % 60;
+let mins = Math.floor((time) / 60);
+let secs = time % 60;
+if (mins <10){ mins = '0' +mins;
 if (secs<10)
   return mins +":0" + secs
   else  return mins +":" + secs
@@ -64,6 +68,13 @@ if (secs<10)
 
 function playSong(id) {
   
+for (const prop in player) {
+  if (player.hasOwnProperty(prop)) {
+    
+  }
+}
+
+  
   if(id==1){
     console.log("Playing "+ player.songs[0].title +" from  " + player.songs[0].album +
     ' by ' + player.songs[0].artist +' | '+minutestosec(player.songs[0].duration) +".")
@@ -71,23 +82,7 @@ function playSong(id) {
   if(id==2){
     console.log("Playing "+ player.songs[1].title +" from " + player.songs[1].album +
     ' by ' + player.songs[1].artist +' | '+minutestosec(player.songs[1].duration)+".")
-  }
-  if(id==7){
-    console.log("Playing "+ player.songs[2].title +" from " + player.songs[2].album +
-    ' by ' + player.songs[2].artist +' | '+minutestosec(player.songs[2].duration)+".")
-  }
-  if(id==3){
-    console.log("Playing "+ player.songs[3].title +" from " + player.songs[3].album +
-    ' by ' + player.songs[3].artist +' | '+minutestosec(player.songs[3].duration)+".")
-  }
-  if(id==4){
-    console.log("Playing "+ player.songs[4].title +" from " + player.songs[4].album +
-    ' by ' + player.songs[4].artist +' | '+minutestosec(player.songs[4].duration)+".")
-  }
-  if(id==5){
-    console.log("Playing "+ player.songs[5].title +" from " + player.songs[5].album +
-    ' by ' + player.songs[5].artist +' | '+minutestosec(player.songs[5].duration)+".")
-  }
+
   // your code here - `playSong` - Gets a song ID. Uses `player.playSong` to play the song with the given ID.
   //"Playing {song.title}  from  {song.album}  by  {song.artist} | {song.durati o n}."
 }
